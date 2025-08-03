@@ -1,13 +1,14 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [tsconfigPaths({ projects: ['tsconfig.json'] }), react()],
   test: {
     // setupFiles: ['./vitest.setup.ts'],
     coverage: {
       // v8은 import도 branch로 판단하는 등 매우 보수적인 coverage 판단을 한다.
-      // 예를들면 `import React from 'react';`와 같은 line도 branch가 된다.
+      // 예를들면 `import React from 'react';`와 같은 import line도 branch가 된다.
       // provider: 'v8',
       provider: 'istanbul',
       exclude: [

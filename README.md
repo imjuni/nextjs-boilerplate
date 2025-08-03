@@ -1,11 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Boilerplate
+
+Modern Next.js Boilerplate
 
 ## Todo
 
 - [ ] i18n
 - [ ] API client (axios, ky, fetch)
+- [x] prettier
 - [ ] zustand
-- [ ] prettier
+- [x] react-hook-form
+- [x] zod
+- [x] shadcn
 - [ ] git hook (husky)
 - [x] tailwindCSS & custom css
 - [x] eslint v9 (with airbnb)

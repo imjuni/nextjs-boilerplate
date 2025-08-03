@@ -21,7 +21,9 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => (
   <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+    >
       {children}
     </body>
   </html>

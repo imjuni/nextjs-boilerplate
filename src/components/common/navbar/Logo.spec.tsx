@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { render } from 'vitest-browser-react';
 
-import { Logo } from './Logo';
+import { Logo } from '#/components/common/navbar/Logo';
 
 describe('Logo', () => {
   test('render message', async () => {
