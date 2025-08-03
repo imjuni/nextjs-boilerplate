@@ -2,9 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Todo
 
-- [ ] tailwindCSS & custom css
-- [x] eslint v9
-- [ ] vitest - unit test
+- [ ] i18n
+- [ ] API client (axios, ky, fetch)
+- [ ] zustand
+- [ ] prettier
+- [ ] git hook (husky)
+- [x] tailwindCSS & custom css
+- [x] eslint v9 (with airbnb)
+- [ ] eslint + lint-stage
+- [x] vitest - unit test
+- [ ] vitest - unit test with zustand
 - [ ] playwright - e2e test
 
 ## Getting Started

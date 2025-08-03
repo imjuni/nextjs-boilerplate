@@ -1,9 +1,9 @@
 export const tsFiles = [
-  "**/*.ts",
-  "**/*.cts",
-  "**/*.mts",
-  "**/*.tsx",
-  "**/*.d.ts",
+  '**/*.ts',
+  '**/*.cts',
+  '**/*.mts',
+  '**/*.tsx',
+  '**/*.d.ts',
 ];
 
 export const customEslintRule = [
@@ -12,8 +12,8 @@ export const customEslintRule = [
       // ----------------------------------------------------------------------------------------------------------
       // eslint
       // ----------------------------------------------------------------------------------------------------------
-      "max-len": [
-        "error",
+      'max-len': [
+        'error',
         {
           ignoreUrls: true,
           ignoreStrings: true,
@@ -23,11 +23,11 @@ export const customEslintRule = [
           code: 120,
         },
       ],
-      "no-underscore-dangle": ["error", { allowAfterThis: true }],
-      "no-restricted-syntax": [
-        "error",
+      'no-underscore-dangle': ['error', { allowAfterThis: true }],
+      'no-restricted-syntax': [
+        'error',
         {
-          selector: "TSEnumDeclaration:not([const=true])",
+          selector: 'TSEnumDeclaration:not([const=true])',
           message: "Don't declare non-const enums",
         },
       ],
@@ -41,15 +41,22 @@ export const customOverrideImportXPlugin = [
   // ----------------------------------------------------------------------------------------------------------
   {
     rules: {
-      "import-x/prefer-default-export": "off",
-      "import-x/no-default-export": "error",
+      'import-x/prefer-default-export': 'off',
+      'import-x/no-default-export': 'error',
     },
   },
   {
-    files: ["src/app/**/*.tsx"],
+    files: ['src/app/**/*.tsx'],
     rules: {
-      "import-x/prefer-default-export": ["error"],
-      "import-x/no-default-export": ["off"],
+      'import-x/prefer-default-export': ['error'],
+      'import-x/no-default-export': ['off'],
+    },
+  },
+  {
+    files: ['next.config.ts', 'vitest.config.{ts,mts}', 'postcss.config.mjs'],
+    rules: {
+      'import-x/prefer-default-export': ['error'],
+      'import-x/no-default-export': ['off'],
     },
   },
 ];
@@ -57,61 +64,62 @@ export const customOverrideImportXPlugin = [
 export const customOverrideEslintRule = [
   {
     files: [
-      "vitest.config.mts",
-      "eslint.config.mjs",
-      "eslint.custom.config.mjs",
+      'vitest.config.mts',
+      'eslint.config.mjs',
+      'eslint.custom.config.mjs',
     ],
     rules: {
-      "import-x/no-extraneous-dependencies": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-var-requires": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
+      'import-x/no-extraneous-dependencies': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
     },
   },
   {
-    files: ["vitest.config.mts"],
+    files: ['vitest.config.mts'],
     rules: {
-      "import-x/no-default-export": "off",
+      'import-x/no-default-export': 'off',
     },
   },
   {
-    files: ["eslint.config.mjs"],
+    files: ['eslint.config.mjs'],
     rules: {
-      "import-x/no-default-export": "off",
-      "import-x/extensions": "off",
-      "import-x/no-rename-default": "off",
+      'import-x/no-default-export': 'off',
+      'import-x/extensions': 'off',
+      'import-x/no-rename-default': 'off',
     },
   },
   {
-    files: ["**/CE_*.ts"],
+    files: ['**/CE_*.ts'],
     rules: {
-      "@typescript-eslint/naming-convention": "off",
-      "@typescript-eslint/no-redeclare": "off",
-      "no-restricted-syntax": "off",
+      '@typescript-eslint/naming-convention': 'off',
+      '@typescript-eslint/no-redeclare': 'off',
+      'no-restricted-syntax': 'off',
     },
   },
   {
-    files: ["**/*.test.ts"],
+    files: ['**/*.spec.ts', '**/*.spec.tsx'],
     rules: {
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "import-x/no-namespace": "off",
-      "no-console": "off",
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      'import-x/no-extraneous-dependencies': 'off',
+      'import-x/no-namespace': 'off',
+      'no-console': 'off',
     },
   },
   {
-    files: ["prepublish.cjs"],
+    files: ['prepublish.cjs'],
     rules: {
-      "no-console": "off",
-      "n/no-process-exit": "off",
+      'no-console': 'off',
+      'n/no-process-exit': 'off',
     },
   },
 ];
 
 export const customIgnore = [
   {
-    ignores: ["./.configs/**", "**/dist/**/*"],
+    ignores: ['./.configs/**', '**/dist/**/*'],
   },
 ];
 
@@ -119,62 +127,62 @@ export const customTsconfig = {
   files: tsFiles,
   languageOptions: {
     parserOptions: {
-      project: ["./tsconfig.eslint.json"],
+      project: ['./tsconfig.eslint.json'],
     },
   },
 };
 
 export const customTypescriptRule = [
   {
-    name: "project/custom/typescript/rules",
+    name: 'project/custom/typescript/rules',
     files: tsFiles,
     rules: {
       // ----------------------------------------------------------------------------------------------------------
       // @typescript-eslint
       // ----------------------------------------------------------------------------------------------------------
-      "@typescript-eslint/naming-convention": [
-        "error",
+      '@typescript-eslint/naming-convention': [
+        'error',
         {
-          selector: "interface",
-          format: ["PascalCase"],
+          selector: 'interface',
+          format: ['PascalCase'],
           custom: {
-            regex: "^I[A-Z]+",
+            regex: '^I[A-Z]+',
             match: true,
           },
         },
         {
-          selector: "typeAlias",
-          format: ["PascalCase"],
+          selector: 'typeAlias',
+          format: ['PascalCase'],
           custom: {
-            regex: "^T[A-Z]+",
+            regex: '^T[A-Z]+',
             match: true,
           },
         },
       ],
-      "@typescript-eslint/member-delimiter-style": [
-        "off",
+      '@typescript-eslint/member-delimiter-style': [
+        'off',
         {
           multiline: {
-            delimiter: "none",
+            delimiter: 'none',
             requireLast: true,
           },
           singleline: {
-            delimiter: "semi",
+            delimiter: 'semi',
             requireLast: false,
           },
         },
       ],
-      "@typescript-eslint/no-unused-vars": [
-        "error",
+      '@typescript-eslint/no-unused-vars': [
+        'error',
         {
-          varsIgnorePattern: "^_.+$",
-          argsIgnorePattern: "^_.+$",
+          varsIgnorePattern: '^_.+$',
+          argsIgnorePattern: '^_.+$',
         },
       ],
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
         {
-          prefer: "type-imports",
+          prefer: 'type-imports',
         },
       ],
     },

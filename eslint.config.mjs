@@ -1,10 +1,11 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-import { configs, plugins, rules } from "eslint-config-airbnb-extended";
-import { rules as prettierConfigRules } from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier";
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import { configs, plugins, rules } from 'eslint-config-airbnb-extended';
+import { rules as prettierConfigRules } from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 import {
   customEslintRule,
@@ -13,9 +14,11 @@ import {
   customOverrideImportXPlugin,
   customTsconfig,
   customTypescriptRule,
-} from "./eslint.config.custom.mjs";
+} from './eslint.config.custom.mjs';
 
+// eslint-disable-next-line no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line no-underscore-dangle
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
@@ -25,7 +28,7 @@ const compat = new FlatCompat({
 const javascriptConfig = [
   // ESLint Recommended Rules
   {
-    name: "js/config",
+    name: 'js/config',
     ...js.configs.recommended,
   },
 
@@ -83,17 +86,17 @@ const typescriptConfig = [
 const prettierConfig = [
   // Prettier Plugin
   {
-    name: "prettier/plugin/config",
+    name: 'prettier/plugin/config',
     plugins: {
       prettier: prettierPlugin,
     },
   },
   // Prettier Config
   {
-    name: "prettier/config",
+    name: 'prettier/config',
     rules: {
       ...prettierConfigRules,
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
     },
   },
 ];
@@ -102,11 +105,11 @@ const eslintConfig = [
   ...customIgnore,
   ...javascriptConfig,
   ...reactConfig,
-  ...compat.extends("next/typescript"),
+  ...compat.extends('next/typescript'),
   ...typescriptConfig,
   ...prettierConfig,
   ...customOverrideEslintRule,
-  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends('next/core-web-vitals'),
 ];
 
 export default eslintConfig;

@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react';
 
-export const Logo = ({ message }: { message: string }): React.ReactNode => (
+export const Logo: React.FC<{ message: string }> = ({
+  message,
+}): React.ReactNode => (
   <React.Fragment>
     <div>
       <span className="font-sans text-sm/6">{message}</span>
