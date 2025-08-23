@@ -1,4 +1,4 @@
-import FormModule from '#/app/form/(modules)/FormModule';
+import FormModule from '#/app/pokemons/search/(modules)/FormModule';
 import { Main } from '#/components/common/main/Main';
 import { Logo } from '#/components/common/navbar/Logo';
 import { Navbar } from '#/components/common/navbar/Navbar';

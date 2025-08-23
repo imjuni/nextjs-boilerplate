@@ -20,7 +20,7 @@ import { PokemonFrame } from '#/frames/PokemonFrame';
 import { Paging } from '#/components/common/pagination/Paging';
 
 const PageSchema = z.preprocess(
-  (v) => v ?? '0', // null/undefined면 "0"
+  (v) => v ?? '1', // null/undefined면 "0"
   z.coerce.number().int().nonnegative(), // 문자열을 정수로 강제 변환
 );
 
