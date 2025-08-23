@@ -5,16 +5,21 @@ Modern Next.js Boilerplate
 ## Todo
 
 - [ ] i18n
-- [ ] API client (axios, ky, fetch)
+  - 현재 사용 기준을 보면 cookie, without url
+- [x] API client (axios, ky, fetch)
+  - jin-frame + axios
+- [ ] SWR
+  - data fetch 이 후 zustand까지 자연스럽게 바인딩
+  - 필요한 경우 데이터 바인딩 이 후 reflow까지
 - [x] prettier
-- [ ] zustand
+- [x] zustand
 - [x] react-hook-form
 - [x] zod
 - [x] shadcn
 - [ ] git hook (husky)
 - [x] tailwindCSS & custom css
 - [x] eslint v9 (with airbnb)
-- [ ] eslint + lint-stage
+- [x] eslint + lint-stage
 - [x] vitest - unit test
 - [ ] vitest - unit test with zustand
 - [ ] playwright - e2e test

@@ -13,6 +13,7 @@ import {
   customOverrideEslintRule,
   customOverrideImportXPlugin,
   customTsconfig,
+  customReactRule,
   customTypescriptRule,
 } from './eslint.config.custom.mjs';
 
@@ -65,6 +66,8 @@ const reactConfig = [
 
   // Strict React Config
   rules.react.strict,
+
+  ...customReactRule,
 ];
 
 const typescriptConfig = [

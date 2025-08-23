@@ -1,8 +1,10 @@
 import React from 'react';
 
-export const Logo: React.FC<{ message: string }> = ({
-  message,
-}): React.ReactNode => (
+interface IProps {
+  message?: string;
+}
+
+export const Logo: React.FC<IProps> = ({ message = '' }): React.ReactNode => (
   <React.Fragment>
     <picture>
       <img
@@ -11,11 +13,14 @@ export const Logo: React.FC<{ message: string }> = ({
         height={38}
         src="/next.svg"
         width={180}
+        data-testid="$id-logo-image"
       />
     </picture>
 
-    <div>
-      <span className="font-sans text-sm/6">{message}</span>
-    </div>
+    {message && (
+      <div>
+        <span className="font-sans text-sm/6">{message}</span>
+      </div>
+    )}
   </React.Fragment>
 );

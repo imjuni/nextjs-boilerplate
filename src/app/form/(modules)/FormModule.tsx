@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from '#/components/ui/form';
 import { Input } from '#/components/ui/input';
+import { PokemonFrame } from '#/frames/PokemonFrame';
 
 import type { SubmitHandler } from 'react-hook-form';
 
@@ -30,7 +31,10 @@ const FormModule: React.FC = () => {
     },
     resolver: zodResolver(schema),
   });
-  const onSubmit: SubmitHandler<TForm> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<TForm> = async (data) => {
+    const frame = PokemonFrame.of({ name: data.name });
+    console.log(await frame.execute());
+  };
 
   return (
     <Form {...form}>

@@ -1,11 +1,15 @@
 import { Main } from '#/components/common/main/Main';
 import { Logo } from '#/components/common/navbar/Logo';
 import { Navbar } from '#/components/common/navbar/Navbar';
+import Link from 'next/link';
 
 const Home: React.FC = () => (
   <div className="flex w-[100vw] h-[100vh]">
     <Navbar>
-      <Logo message="Next" />
+      <Logo />
+
+      <Link href="/">Home</Link>
+      <Link href="/pokemons">Pokemon</Link>
     </Navbar>
 
     <Main>

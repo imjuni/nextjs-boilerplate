@@ -6,6 +6,12 @@ export const tsFiles = [
   '**/*.d.ts',
 ];
 
+export const customIgnore = [
+  {
+    ignores: ['./.configs/**', '**/dist/**/*'],
+  },
+];
+
 export const customEslintRule = [
   {
     rules: {
@@ -117,9 +123,13 @@ export const customOverrideEslintRule = [
   },
 ];
 
-export const customIgnore = [
+export const customReactRule = [
   {
-    ignores: ['./.configs/**', '**/dist/**/*'],
+    name: '',
+    file: ['**/*.jsx', '**/*.tsx'],
+    rules: {
+      'react/require-default-props': 'off',
+    },
   },
 ];
 
