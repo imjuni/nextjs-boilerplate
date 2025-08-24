@@ -1,0 +1,11 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "pokemon": "포켓몬"
+    }
+  },
+  "home": {
+    "message": "메시지 입니다 :)"
+  }
+}

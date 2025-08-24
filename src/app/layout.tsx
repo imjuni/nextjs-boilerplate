@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
 
 import './globals.css';
 
@@ -24,7 +25,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => (
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
     >
-      {children}
+      <NextIntlClientProvider>{children}</NextIntlClientProvider>
     </body>
   </html>
 );

@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest';
 import { render } from 'vitest-browser-react';
 
-import { Navbar } from '#/components/common/navbar/Navbar';
+import { NavbarBox } from '#/components/common/navbar/NavbarBox';
 
 describe('Navbar', () => {
   test('render ', () => {
-    const { container } = render(<Navbar />);
+    const { container } = render(<NavbarBox />);
     expect(container.firstChild).toBeTruthy();
   });
 });

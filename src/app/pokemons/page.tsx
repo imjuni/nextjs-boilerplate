@@ -1,9 +1,6 @@
-import Link from 'next/link';
 import { z } from 'zod';
 
 import { Main } from '#/components/common/main/Main';
-import { Logo } from '#/components/common/navbar/Logo';
-import { Navbar } from '#/components/common/navbar/Navbar';
 import { PokemonsFrame } from '#/frames/PokemonsFrame';
 import { nanoid } from 'nanoid';
 import {
@@ -18,6 +15,7 @@ import {
 } from '#/components/ui/table';
 import { PokemonFrame } from '#/frames/PokemonFrame';
 import { Paging } from '#/components/common/pagination/Paging';
+import { Navbar } from '#/components/common/navbar/Navbar';
 
 const PageSchema = z.preprocess(
   (v) => v ?? '1', // null/undefined면 "0"
@@ -49,12 +47,7 @@ const Pokemons: React.FC<{
 
   return (
     <div className="flex w-[100vw] h-[100vh]">
-      <Navbar>
-        <Logo />
-
-        <Link href="/">Home</Link>
-        <Link href="/pokemons">Pokemon</Link>
-      </Navbar>
+      <Navbar />
 
       <Main>
         <div className="flex p-3 h-full w-full">
