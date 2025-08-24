@@ -1,5 +1,4 @@
-import crypto from 'crypto';
-
+import { v4 as uuidV4 } from 'uuid';
 import { Get, JinFrame, Query, TFieldsOf } from 'jin-frame';
 
 @Get({ host: 'https://pokeapi.co' })
@@ -10,6 +9,6 @@ export class BaseFrame<S = unknown, F = unknown> extends JinFrame<S, F> {
   protected static override getDefaultValues(): Partial<
     TFieldsOf<InstanceType<typeof BaseFrame>>
   > {
-    return { tid: crypto.randomUUID() };
+    return { tid: uuidV4() };
   }
 }

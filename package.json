@@ -33,6 +33,7 @@
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^2.1.0",
     "url-naong": "^1.6.0",
+    "uuid": "^11.1.0",
     "vite-tsconfig-paths": "^5.1.4",
     "zod": "^4.0.14",
     "zustand": "^5.0.7"

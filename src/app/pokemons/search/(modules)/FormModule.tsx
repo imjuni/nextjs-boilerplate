@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import useSWRMutation from 'swr/mutation';
 
 import {
   Form,
@@ -14,9 +15,9 @@ import {
   FormMessage,
 } from '#/components/ui/form';
 import { Input } from '#/components/ui/input';
-import { PokemonFrame } from '#/frames/PokemonFrame';
 
 import type { SubmitHandler } from 'react-hook-form';
+import { PokemonFrame } from '#/frames/PokemonFrame';
 
 const schema = z.object({
   name: z.string().max(20).min(1),
@@ -31,9 +32,21 @@ const FormModule: React.FC = () => {
     },
     resolver: zodResolver(schema),
   });
-  const onSubmit: SubmitHandler<TForm> = async (data) => {
-    const frame = PokemonFrame.of({ name: data.name });
-    console.log(await frame.execute());
+
+  const { trigger, data, error, isMutating } = useSWRMutation(
+    PokemonFrame.getEndpoint().pathname,
+    async () => {
+      const frame = PokemonFrame.of((b) =>
+        b.from({ name: form.getValues().name }),
+      );
+      return frame.execute();
+    },
+  );
+
+  const onSubmit: SubmitHandler<TForm> = async () => {
+    await trigger();
+
+    console.log(data, error, isMutating);
   };
 
   return (
